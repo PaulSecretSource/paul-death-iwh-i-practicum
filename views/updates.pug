@@ -1,0 +1,20 @@
+doctype html
+html
+    head 
+        title= title
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        h1 Add a car
+        form(action="/update-cobj" method="POST")
+            p
+                label Colour
+                input(type="text" name="colour")
+            p
+                label Horsepower
+                input(type="text" name="horsepower")
+            p
+                label Brand
+                input(type="text" name="brand")
+            button(type="submit") Submit
+        a(href="/") Return to the homepage
+        
