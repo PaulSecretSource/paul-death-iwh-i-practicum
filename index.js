@@ -10,7 +10,7 @@ app.use(express.json());
 
 // * Please DO NOT INCLUDE the private app access token in your repo. Don't do this practicum in your normal account.
 const PRIVATE_APP_ACCESS = process.env.PRIVATE_APP_ACCESS;
-const OBJECT_ID = '2-257209659/';
+const OBJECT_ID = '2-257209659';
 const headers = {
     Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
     'Content-Type': 'application/json'
@@ -20,7 +20,7 @@ const headers = {
 
 // * Code for Route 1 goes here
 app.get('/', async (req, res) => {
-    const url = `https://api.hubapi.com/crm/v3/objects/${OBJECT_ID}?properties=colour,horsepower,brand`;
+    const url = `https://api.hubapi.com/crm/v3/objects/${OBJECT_ID}?properties=cars,horsepower,brand`;
     try {
         const response = await
         axios.get(url, { headers });
@@ -52,7 +52,7 @@ app.get('/update-cobj', (req, res) => {
 app.post('/update-cobj', async(req, res) => {
     const newRecord = {
         properties: {
-            colour: req.body.colour,
+            cars: req.body.cars,
             horsepower: req.body.horsepower,
             brand: req.body.brand
         }
