@@ -1,0 +1,18 @@
+doctype html
+html
+    head 
+       title=title 
+       link(rel="stylesheet", href="/css/style.css")
+    body
+        a(href="/update-cobj") Add to this table
+        h1 Cars
+        table
+            tr
+                th Colour
+                th Horsepower
+                th Brand
+            each record in records
+                tr
+                    td= record.properties.colour
+                    td= record.properties.horsepower
+                    td= record.properties.brand
